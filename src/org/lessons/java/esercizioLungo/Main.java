@@ -129,7 +129,9 @@ public class Main {
 
                     }
                     try {
-                        concerto.prenota(postiDaPrenotare);
+                        for (int i = 0; i < postiDaPrenotare; i++) {
+                            concerto.prenota();
+                        }
                         System.out.println("Prenotazione effettuata con successo!");
                     } catch (Exception e) {
                         System.out.println("Errore durante la prenotazione: " + e.getMessage());
@@ -141,7 +143,9 @@ public class Main {
                     System.out.print("Quanti posti vuoi disdire? ");
                     int postiDaDisdire = scanner.nextInt();
                     try {
-                        concerto.disdici(postiDaDisdire);
+                        for (int i = postiDaDisdire; i > 0; i--) {
+                            concerto.disdici();
+                        }
                         System.out.println("Disdetta effettuata con successo!");
                     } catch (Exception e) {
                         System.out.println("Errore durante la disdetta: " + e.getMessage());

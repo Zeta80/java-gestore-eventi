@@ -46,31 +46,53 @@ public abstract class Evento {
 
 
     // METODI
-    public void prenota(int numPosto) throws IllegalArgumentException {
+    //prenotazione con piu posti
+    //public void prenota(int numPosto) throws IllegalArgumentException {
+      //  if (data.isBefore(LocalDate.now())) {
+        //    throw new IllegalArgumentException("cosa sei un viaggiatore del tempo? cambia data.");
+        //}
+        //if (postiPrenotati >= postiTotali) {
+          //  throw new IllegalArgumentException("troppo lento bambol, descantabauchi i posti son finiti.");
+        //}
+        //postiPrenotati += numPosto;
+    //}
+
+    public void prenota() throws IllegalArgumentException {
         if (data.isBefore(LocalDate.now())) {
             throw new IllegalArgumentException("cosa sei un viaggiatore del tempo? cambia data.");
         }
         if (postiPrenotati >= postiTotali) {
             throw new IllegalArgumentException("troppo lento bambol, descantabauchi i posti son finiti.");
         }
-        postiPrenotati += numPosto;
+        postiPrenotati ++;
     }
+    //disdire con piu posti
+    //public void disdici(int numPosto) throws IllegalArgumentException {
+      //  if (data.isBefore(LocalDate.now())) {
+        //    throw new IllegalArgumentException("non posso cancellare il passato");
+        //}
+        //if (postiPrenotati <= 0) {
+          //  throw new IllegalArgumentException("sicuro? non mi risultano posti prenotati");
+        //}
+        //;
+        //if (numPosto > postiTotali){
 
-    public void disdici(int numPosto) throws IllegalArgumentException {
-        if (data.isBefore(LocalDate.now())) {
-            throw new IllegalArgumentException("non posso cancellare il passato");
-        }
-        if (postiPrenotati <= 0) {
-            throw new IllegalArgumentException("sicuro? non mi risultano posti prenotati");
-        }
-        ;
-        if (numPosto > postiTotali){
+          //  throw new IllegalArgumentException("non posso disdire piu posti del totale ");
+        //} else {
+          //  postiPrenotati -= numPosto;
+        //}
+    //}
+          public void disdici() throws IllegalArgumentException {
+                if (data.isBefore(LocalDate.now())) {
+               throw new IllegalArgumentException("non posso cancellare il passato");
+              }
+              if (postiPrenotati <= 0) {
+               throw new IllegalArgumentException("sicuro? non mi risultano posti prenotati");
+              }
 
-            throw new IllegalArgumentException("non posso disdire piu posti del totale ");
-        } else {
-            postiPrenotati -= numPosto;
-        }
-    }
+                postiPrenotati --;
+              }
+
 
     public int getPostiDisponibili(){
         if (getPostiTotali() - getPostiPrenotati() < 0){
