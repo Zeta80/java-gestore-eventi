@@ -65,7 +65,7 @@ public class Main {
                 prezzoValido = true;
             } catch (Exception e) {
                 System.out.println("Errore: devi inserire un numero decimale valido come prezzo.");
-
+                scanner.nextLine();
             }
         }
 
@@ -97,31 +97,61 @@ public class Main {
         System.out.println("*********+++**********");
 
         // Chiedi all'utente di effettuare delle prenotazioni
-        System.out.print("Quanti posti vuoi prenotare? ");
-        int postiDaPrenotare = scanner.nextInt();
-        try {
-            concerto.prenota(postiDaPrenotare);
-            System.out.println("Prenotazione effettuata con successo!");
-        } catch (Exception e) {
-            System.out.println("Errore durante la prenotazione: " + e.getMessage());
+        //System.out.print("Quanti posti vuoi prenotare? ");
+
+        while (true) {
+            System.out.println("(p) per Prenotare posti, (d) per Disdire prenotazioni, (e) per uscire");
+            scanner.nextLine();
+            String choice = scanner.nextLine();
+            if (choice.equals("e")) {
+                System.out.println("Grazie e arrivederci!!");
+                break;
+            }
+
+            switch (choice) {
+                case "p" -> {
+                    int postiDaPrenotare = 0;
+                    boolean postiValidi = false;
+                    while (!postiValidi) {
+                        System.out.print("Quanti posti vuoi prenotare? ");
+                        try {
+                            postiDaPrenotare = scanner.nextInt();
+                            if (postiDaPrenotare <= concerto.getPostiDisponibili() && postiDaPrenotare >= 0) {
+                                postiValidi = true;
+                            } else {
+                                System.out.println("il numero di posti da prenotare è maggiore o minore dei posti disponibili.");
+                            }
+                        } catch (Exception e) {
+                            System.out.println("devi inserire un numero intero valido come numero di posti.");
+                            scanner.nextLine(); // Consuma l'input non valido dal buffer di input
+
+                        }
+
+                    }
+                    try {
+                        concerto.prenota(postiDaPrenotare);
+                        System.out.println("Prenotazione effettuata con successo!");
+                    } catch (Exception e) {
+                        System.out.println("Errore durante la prenotazione: " + e.getMessage());
+                    }
+                    System.out.println("Posti prenotati: " + concerto.getPostiPrenotati());
+                    System.out.println("Posti disponibili: " + concerto.getPostiDisponibili());
+                }
+                case "d" -> {
+                    System.out.print("Quanti posti vuoi disdire? ");
+                    int postiDaDisdire = scanner.nextInt();
+                    try {
+                        concerto.disdici(postiDaDisdire);
+                        System.out.println("Disdetta effettuata con successo!");
+                    } catch (Exception e) {
+                        System.out.println("Errore durante la disdetta: " + e.getMessage());
+                    }
+                    System.out.println("Posti prenotati: " + concerto.getPostiPrenotati());
+                    System.out.println("Posti disponibili: " + concerto.getPostiDisponibili());
+                }
+                default -> System.out.println("opzione non disponibile");
+            }
         }
 
-        // Stampa il numero di posti prenotati e disponibili
-        System.out.println("Posti prenotati: " + concerto.getPostiPrenotati());
-        System.out.println("Posti disponibili: " + concerto.getPostiDisponibili());
-
-        // Chiedi all'utente di effettuare delle disdette
-        System.out.print("Quanti posti vuoi disdire? ");
-        int postiDaDisdire = scanner.nextInt();
-        try {
-            concerto.disdici(postiDaDisdire);
-            System.out.println("Disdetta effettuata con successo!");
-        } catch (Exception e) {
-            System.out.println("Errore durante la disdetta: " + e.getMessage());
-        }
-
-        // Stampa il numero di posti prenotati e disponibili
-        System.out.println("Posti disponibili: " + concerto.getPostiDisponibili());
-        System.out.println("Posti prenotati: " + concerto.getPostiPrenotati());
     }
 }
