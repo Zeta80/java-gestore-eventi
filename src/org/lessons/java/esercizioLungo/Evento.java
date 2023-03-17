@@ -48,7 +48,7 @@ public abstract class Evento {
     public int getPostiPrenotati() {
         return postiPrenotati;
     }
-
+    // METODI
     public void prenota(int numPosto) throws IllegalArgumentException {
         if (data.isBefore(LocalDate.now())) {
             throw new IllegalArgumentException("cosa sei un viaggiatore del tempo? cambia data.");
@@ -71,6 +71,6 @@ public abstract class Evento {
 
     @Override
     public String toString() {
-        return data + " - " + titolo;
+        return getData() + " - " + getTitolo();
     }
 }
