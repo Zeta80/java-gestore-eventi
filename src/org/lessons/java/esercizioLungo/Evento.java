@@ -63,12 +63,23 @@ public abstract class Evento {
         if (postiPrenotati <= 0) {
             throw new IllegalArgumentException("sicuro? non mi risultano posti prenotati");
         }
-        postiPrenotati -= numPosto;
+        ;
+        if (numPosto > postiTotali){
+
+            throw new IllegalArgumentException("non posso disdire piu posti del totale ");
+        } else {
+            postiPrenotati -= numPosto;
+        }
     }
 
     public int getPostiDisponibili(){
-        int postiDisponibili= getPostiTotali() - getPostiPrenotati();
-        return postiDisponibili;
+        if (getPostiTotali() - getPostiPrenotati() < 0){
+            throw new IllegalArgumentException("i posti prenotati non possono essere piu dei posti totali");
+        } else {
+            int postiDisponibili= getPostiTotali() - getPostiPrenotati();
+            return postiDisponibili;
+        }
+
     }
 
     @Override

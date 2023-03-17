@@ -36,12 +36,51 @@ public class Main {
                 System.out.println("Formato data non valido. Inserire una data nel formato gg/mm/aaaa.");
             }
         }
-        System.out.print("Inserisci l'ora del concerto (formato HH:mm): ");
-        LocalTime ora = LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm"));
-        System.out.print("Inserisci il prezzo del biglietto: ");
-        BigDecimal prezzo = scanner.nextBigDecimal();
-        System.out.print("Inserisci la capienza della location: ");
-        int capienza = scanner.nextInt();
+
+        boolean oraValida = false;
+        LocalTime ora = null;
+        while (!oraValida) {
+            System.out.print("Inserisci l'ora dell'evento (formato HH:mm): ");
+            try {
+                LocalTime oraInserita = LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm"));
+                ora = oraInserita;
+                oraValida = true;
+
+            } catch (DateTimeParseException e) {
+                System.out.println("Formato ora non valido. Inserisci l'ora nel formato HH:mm.");
+            }
+        }
+
+        //System.out.print("Inserisci l'ora del concerto (formato HH:mm): ");
+        //LocalTime ora = LocalTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("HH:mm"));
+        //System.out.print("Inserisci il prezzo del biglietto: ");
+        //BigDecimal prezzo = scanner.nextBigDecimal();
+        //System.out.print("Inserisci il prezzo del biglietto: ");
+        BigDecimal prezzo = null;
+        boolean prezzoValido = false;
+        while (!prezzoValido) {
+            System.out.print("Inserisci il prezzo del biglietto: ");
+            try {
+                prezzo = scanner.nextBigDecimal();
+                prezzoValido = true;
+            } catch (Exception e) {
+                System.out.println("Errore: devi inserire un numero decimale valido come prezzo.");
+
+            }
+        }
+
+
+        int capienza = 0;
+        boolean capienzaValida = false;
+        while (!capienzaValida) {
+            System.out.print("Inserisci la capienza della location: ");
+            try {
+                capienza = scanner.nextInt();
+                capienzaValida = true;
+            } catch (Exception e) {
+                System.out.println("Errore: devi inserire un numero intero.");
+            }
+        }
 
         // Crea un oggetto Concerto
         Concerto concerto = new Concerto(titolo, giornata, capienza, ora, prezzo);

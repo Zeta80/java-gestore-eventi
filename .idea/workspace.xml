@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85197409-7f28-4652-aa0c-4c700d7f188a" name="Changes" comment="adjust comments and getter in toString">
-      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Concerto.java" afterDir="false" />
+    <list default="true" id="85197409-7f28-4652-aa0c-4c700d7f188a" name="Changes" comment="First version of finish exercise, need to add some verification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Evento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Main.java" afterDir="false" />
@@ -71,12 +70,20 @@
       <option name="project" value="LOCAL" />
       <updated>1679047414619</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First version of finish exercise, need to add some verification">
+      <created>1679052102111</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679052102111</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init with Class Evento" />
     <MESSAGE value="adjust comments and getter in toString" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjust comments and getter in toString" />
+    <MESSAGE value="First version of finish exercise, need to add some verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="First version of finish exercise, need to add some verification" />
   </component>
 </project>
