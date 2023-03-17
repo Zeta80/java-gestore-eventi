@@ -9,10 +9,9 @@ public abstract class Evento {
     private int postiPrenotati;
 
     public Evento(String titolo, LocalDate data, int postiTotali) throws IllegalArgumentException {
-
         setTitolo(titolo);
         setData(data);
-        setPostiTotali(postiTotali);
+        this.postiTotali = postiTotali;
         this.postiPrenotati = 0;
     }
 
@@ -40,14 +39,12 @@ public abstract class Evento {
     public int getPostiTotali() {
         return postiTotali;
     }
-
-    public void setPostiTotali(int postiTotali) {
-        this.postiTotali = postiTotali;
-    }
     //posti prenotati
     public int getPostiPrenotati() {
         return postiPrenotati;
     }
+
+
     // METODI
     public void prenota(int numPosto) throws IllegalArgumentException {
         if (data.isBefore(LocalDate.now())) {
@@ -67,6 +64,11 @@ public abstract class Evento {
             throw new IllegalArgumentException("sicuro? non mi risultano posti prenotati");
         }
         postiPrenotati -= numPosto;
+    }
+
+    public int getPostiDisponibili(){
+        int postiDisponibili= getPostiTotali() - getPostiPrenotati();
+        return postiDisponibili;
     }
 
     @Override
