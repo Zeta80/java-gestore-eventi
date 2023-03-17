@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85197409-7f28-4652-aa0c-4c700d7f188a" name="Changes" comment="FINISH, need bonus">
+    <list default="true" id="85197409-7f28-4652-aa0c-4c700d7f188a" name="Changes" comment="adjust prenotazioni-disdette">
+      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/MainBonus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/ProgrammEventi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/esercizioLungo/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679062377817</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="adjust prenotazioni-disdette">
+      <created>1679063394986</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679063394986</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -100,7 +107,8 @@
     <MESSAGE value="First version of finish exercise, need to add some verification" />
     <MESSAGE value="break" />
     <MESSAGE value="FINISH, need bonus" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINISH, need bonus" />
+    <MESSAGE value="adjust prenotazioni-disdette" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust prenotazioni-disdette" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
